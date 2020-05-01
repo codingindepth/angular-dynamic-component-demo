@@ -1,3 +1,2 @@
-# angular-dynamic-component-1-h6hxos
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-dynamic-component-1-h6hxos)
+# angular-dynamic-component
+This Angular app demonstrate Dynamic creating dynamic component in Angular 9.
