@@ -1,0 +1,75 @@
+<h5>Product component</h5>
+<div class="row">
+	<div class="col-md-12">&nbsp;</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">&nbsp;</div>
+</div>
+<div class="row required-field">
+	<div class="col-md-4">
+		<label class="cus-form-label">Product Name</label>
+		<input class="form-control minimal" id="productName"
+            [(ngModel)]="productField.productName">
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">&nbsp;</div>
+</div>
+<div class="row required-field">
+	<div class="col-md-4">
+		<label class="cus-form-label">Product Code</label>
+		<input class="form-control minimal" id="productCode"
+            [(ngModel)]="productField.productCode">
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">&nbsp;</div>
+</div>
+<label class="cus-form-label">Product Features</label>
+<div class="row">
+	<div class="col-md-12">&nbsp;</div>
+</div>
+<table class="col-lg-8" id="callingHours-id" style="background-color: white;">
+	<thead>
+		<tr>
+			<th class="bordered-cell" style="width: 30%;">Feature Name</th>
+			<th class="bordered-cell">Feature Date</th>
+      		<th class="bordered-cell">Feature Description</th>
+		</tr>
+	</thead>
+	<tbody>
+    <ng-template ngFor let-prod [ngForOf]="productField.productFeatures" let-i="index">
+			<tr>
+        <td>
+				<input class="form-control minimal" id="{{name + prod}}"
+            [(ngModel)]="prod.featureName">
+				</td>
+        <td>
+				<input class="form-control minimal" id="{{featureAddedDate + prod}}"
+            [(ngModel)]="prod.featureAddedDate">
+				</td>
+         <td>
+				<input class="form-control minimal" id="{{featureDescription + prod}}"
+            [(ngModel)]="prod.featureDescription">
+				</td>
+        <td>
+		<ng-container>
+			<button id="{{'remoeMinus' +i}}" class="btn btn-xs btn-danger" (click)="removeNewProdField(i)">
+		                  <i class="fa fa-minus"></i>
+		                </button>
+		</ng-container>
+     <ng-container>
+       <button id="{{'addrec'+ i }}" class="btn btn-xs btn-primary" (click)="addNewProdField(i)">
+              <i class="fa fa-plus"></i>
+              </button>
+    </ng-container>
+              
+        </td>
+			</tr>
+        
+		</ng-template>
+   
+	</tbody>
+</table>
